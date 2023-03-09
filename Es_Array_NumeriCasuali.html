@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generatore di numeri casuali</title>
+  </head>
+  <body>
+    <h1>Numeri Generati (1 - 50):</h1>
+    <ul id="numeri"></ul>
+    <script>
+      //Creazione Di Un Array
+      var numeriCasuali = [];
+
+      //Generazione di 20 Numeri Casuali
+      while (numeriCasuali.length < 20) {
+        var numero = Math.floor(Math.random() * 50) + 1;
+        if (!numeriCasuali.includes(numero)) {
+          numeriCasuali.push(numero);
+        }
+      }
+
+      // Stampa Numeri Casuali genrati
+      var lista = document.getElementById("numeri");
+      for (var i = 0; i < numeriCasuali.length; i++) {
+        var elementoLista = document.createElement("li");
+        var testoElemento = document.createTextNode(numeriCasuali[i]);
+        elementoLista.appendChild(testoElemento);
+        lista.appendChild(elementoLista);
+      }
+    </script>
+  </body>
+</html>
